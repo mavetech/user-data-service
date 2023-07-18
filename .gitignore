@@ -1,0 +1,54 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# Ignore build output
+build/
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+
+# Ignore Maven specific files
+.mvn/
+mvnw
+mvnw.cmd
+mvn-wrapper.jar
+
+# Ignore Gradle specific files
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
+# Ignore system-specific files
+*.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore compiled bytecode
+*.class
+
+# Ignore package files
+*.jar
+*.war
+*.ear

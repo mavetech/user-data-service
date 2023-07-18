@@ -1,5 +1,8 @@
 # user-data-service
 
+## Build project
+- mvn: clean package
+
 ## Dockerize and push to dockerhub
 - `docker build -t user-data-service:latest .`
 - `docker tag user-data-service:latest <dockerhub-username>/user-data-service:latest`

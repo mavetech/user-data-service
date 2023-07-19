@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserDataController {
 
-    @CrossOrigin(origins = "http://localhost:8081")
-    @GetMapping("/ docker run -d --network my_network --name Container1 user-auth-service:latest\n/{username}")
+    @GetMapping("/user_data/{username}")
     public ResponseEntity<UserData> getUserData(@PathVariable String username) {
         log.info("Request: username:"+username);
         if ("user1".equals(username)) {

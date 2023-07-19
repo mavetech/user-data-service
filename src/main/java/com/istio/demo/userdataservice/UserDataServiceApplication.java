@@ -13,13 +13,4 @@ public class UserDataServiceApplication {
 		SpringApplication.run(UserDataServiceApplication.class, args);
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/user_data").allowedOrigins("http://localhost:8081");
-			}
-		};
-	}
 }

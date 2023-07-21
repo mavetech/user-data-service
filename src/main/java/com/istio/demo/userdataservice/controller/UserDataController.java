@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserDataController {
 
-    @CrossOrigin(origins = "http://localhost:8081")
     @GetMapping("/user_data/{username}")
     public ResponseEntity<UserData> getUserData(@PathVariable String username) {
         log.info("Request: username:"+username);

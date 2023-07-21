@@ -8,7 +8,5 @@ import lombok.Data;
 public class UserData {
     private String name;
     private int age;
-
-    // Constructors, getters, and setters (omitted for brevity).
 }
 

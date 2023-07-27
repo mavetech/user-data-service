@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: user-data-service
+  name: user-data-service-v1
 spec:
   selector:
-    app: user-data-service
+    app: user-data-service-v1
   ports:
     - protocol: TCP
       port: 8082
@@ -13,19 +13,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user-data-service
+  name: user-data-service-v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: user-data-service
+      app: user-data-service-v1
   template:
     metadata:
       labels:
-        app: user-data-service
+        app: user-data-service-v1
     spec:
       containers:
-        - name: user-data-service
-          image: mak1995/user-data-service:latest
+        - name: user-data-service-v1
+          image: mak1995/user-data-service:v1
           ports:
             - containerPort: 8082

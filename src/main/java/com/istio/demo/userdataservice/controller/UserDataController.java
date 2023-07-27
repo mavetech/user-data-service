@@ -17,20 +17,14 @@ import java.util.Random;
 public class UserDataController {
 
     @GetMapping("/user_data/{username}")
-    public ResponseEntity<Object> getUserData(@PathVariable String username) {
-        // Generate a random number between 0 and 1 (inclusive)
-        int random = new Random().nextInt(2);
-
-        if (random == 0) {
-            UserData userData = UserData.builder().name("David Smith").age(48).build();
-            log.info("Request: userData: {}", userData.toString());
+    public ResponseEntity<UserData> getUserData(@PathVariable String username) {
+        log.info("Request: username:"+username);
+        if ("user1".equals(username)) {
+            UserData userData = UserData.builder().name("Adam Smith").age(45).build();
+            log.info("Request: userData:"+userData.toString());
             return ResponseEntity.ok(userData);
         } else {
-            String message = "Service Unavailable";
-            HttpHeaders headers = new HttpHeaders();
-            headers.add(HttpHeaders.CONTENT_TYPE, "application/json");
-            ErrorResponse errorResponse = new ErrorResponse(message, headers, HttpStatus.SERVICE_UNAVAILABLE);
-            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(errorResponse);
+            return ResponseEntity.notFound().build();
         }
     }
 }
